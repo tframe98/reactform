@@ -19,7 +19,7 @@ export default function SignUpForm({ setToken }) {
       const result = await response.json();
   
       if (response.ok) {
-        setToken(result.token); 
+        setToken(result.token);
       } else {
         throw new Error(result.message || 'An error occurred during sign up');
       }
@@ -29,7 +29,7 @@ export default function SignUpForm({ setToken }) {
   }
 
   return (
-    <>
+    <div>
       <h2>Sign Up</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -51,6 +51,7 @@ export default function SignUpForm({ setToken }) {
         </label>
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }
+
